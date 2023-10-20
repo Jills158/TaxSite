@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="Employees.html">EMPLOYEES</a>
+        
+    </nav>
+    <div class="page">
+        <div id="tax-code-window"><!--need to hide this once sorted-->
+            <br>
+            <h2 class="upper-text">UNDERSTANDING</h2><h2 class="upper-text">TAX CODES</h2>
+            <img id = "PAYE-code" src="https://drive.google.com/uc?export=view&id=1jQ2QkeFx8Xrgae8aahkuCh1-Xyyfzmrw" alt="extract from PAYE coding notice">
+        <div class = code-text><p>A tax code is a combination of numbers and letters that tells your employer how much income tax to deduct from your pay.</p>
+        <p>As you can see, the code on the left is for the tax year ended 5th April 2024.  This individual has their Personal Allowance of £12,570 and income from State Pension of £8,602.  State Pension is not taxed at source and so personal allowances are set against this income, leaving £3,968 allowances remaining.</p>
+        <p>The allowances are turned into a tax code by replacing the last number with a letter.  In this case - L.  This individual has a pension with Royal Bank of Scotland and so code 396L is the code that they will use to work out how much tax to deduct from the pension when it is paid each month</p>    
+    <button onclick = "returnPage()">Return to Employee Page</button>
+    </div>
+    <img id="tax-code-chart" src="https://drive.google.com/uc?export=view&id=139MHK3xsEIwbUHRR4e-QQGv8iu0evrwL" alt="a chart showing tax code letter and their meanings">
+    </div><!-- end tax code window-->
+        <div class="upper">
+            <div class="upper-text">
+                <br>
+                <h2>PAY</h2>
+                <h2>AS YOU</h2>
+                <h2>EARN</h2>
+                <br>
+                <p>Employees pay tax via Pay as You Earn (PAYE). An employer will deduct income tax and national insurance from an employee’s wages before paying them and then pay this over to H M Revenue & Customs (HMRC) together with an employer national insurance contribution.</p>  
+                <p>The employer knows how much tax to deduct because HMRC gives them a tax code to use for each of their employees.  A tax code is worked out from the personal allowance and tax reliefs you are entitled to (eg pension relief) less any deductions and employer benefits (eg state pension or company car).</p>
+                <p>If you have receive a pension (other than state pension) PAYE is collected in the same way.</p>
+                <button onclick="goCode()">Click to see an example of a tax code</button>
+                <p></p>
+            </div>
+            <img id= "man-chair" src="https://drive.google.com/uc?export=view&id=1AXGF0Jh6Qof4TOJy6q1YTBoXg4vcXX_E" alt="man working on a computer">
+            
+        </div>
+        
+ 
+        
+        <div class="lower"><!--lower half of page-->
+            <div class="center-heading"><!--lower heading-->
+                <h2>TAKE HOME PAY CALCULATOR</h2>
+          </div><!--End of lower heading-->
+
+            <div><!--section below heading-->
+            <div class="calculator"><!--box to contain calculator-->
+           <div class="left-box">
+            <div class="form">
+                <span>Monthly gross pay £</span>
+                <input type="text" id="gpay" name="gpay"><br><br><br>
+                <span>Pension contribution %</span>
+                <input type="text" id="pension" name="pension"><br><br><br>
+                <span>Student Loan</span>
+                <select id="studentloan" name="studentloan">
+                    <option value="none">none</option>
+                    <option value="Plan1">Plan 1</option>
+                    <option value="Plan2">Plan 2</option>
+                </select><br><br><br>
+                <input type="submit" onclick="calculateResults()">
+                <br><br>
+                <p id="error"></p>
+            </div>
+           </div><!--box for inputs-->
+           <div class="right-box">
+            <br><br>
+            <span class="label-result">Monthly Gross Pay</span></span><span class="result" id="grosspay"></span><br><br>
+            <span class="label-result">Tax deducted </span><span class="result" id="tax"></span><br><br>
+            <span class="label-result">NI deducted </span><span class="result" id="ni"></span><br><br>
+            <span class="label-result">Pension contributions</span><span class="result" id="pension-contribution"></span><br><br>
+            <span class="label-result">Student loan</span><span class="result" id="sloan"></span><br><br>
+            <span class="label-result"><b>Take home pay</span><span class="result" id="takehome"></b></span>
+           </div><!--box for outputs-->
+        </div><!--End of box to contain calculator-->
+        
+                           
+        <div class="lower-text" ><!--box for tax type text-->
+                   <p>The above is a simple tax calculator that will calculate your tax home pay based on the information you provide.  It assumes you are an employee who pays national insurance and have the standard tax code 1257L</p>
+                </div><!--End of box for tax type text-->
+                
+          
+        </div><!--End of section below lower header-->
+    </div><!--End of lower half-->
+    </div>
+    <div id = "ee-attri" class ="attribution">Illustrations by <a href="https://icons8.com/illustrations/author/CkHJmwURlxnt">Olha Khomich</a> from <a href="https://icons8.com/illustrations">Ouch!</a></div>
+</body>
+</html>
